@@ -1,0 +1,22 @@
+<label for="toggle" class="inline-flex items-center cursor-pointer">
+    <span class="relative">
+      <span class="block w-20 h-12 bg-gray-200 rounded-full shadow-inner dark:bg-gray-700"></span>
+      <span class="absolute inset-y-0 block w-6 h-6 mt-3 text-gray-800 dark:text-gray-200"
+            [ngClass]="{'left-0 ml-3': darkThemeToggleControl.value,'right-0 mr-3': !darkThemeToggleControl.value }">
+        <svg *ngIf="darkThemeToggleControl.value" class="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+        <svg *ngIf="!darkThemeToggleControl.value" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 20 20" fill="currentColor">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+        </svg>
+      </span>
+      <span
+        [ngClass]="{'from-gray-800 to-gray-900 transform translate-x-full elevate-4': darkThemeToggleControl.value, ' from-white to-gray-50': !darkThemeToggleControl.value }"
+        class="absolute inset-y-0 left-0 block w-8 h-8 mt-2 ml-2 transition-transform duration-300 ease-in-out rounded-full shadow-md bg-gradient-to-b focus-within:shadow-outline">
+        <input id="toggle" [formControl]="darkThemeToggleControl" type="checkbox" class="absolute w-0 h-0 opacity-0"/>
+      </span>
+    </span>
+</label>
